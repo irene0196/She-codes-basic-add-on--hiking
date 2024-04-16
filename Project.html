@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiking 🏞</title>
+    <style>
+      body {
+        background: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+      footer {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 20px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+      img {
+        width: 100%;
+        border-radius: 15px;
+      }
+      .second {
+        display: block;
+        margin: 0 auto;
+        border: 1px solid black;
+        background: white;
+        font-size: 20px;
+        border-radius: 6px;
+        padding: 10px 15px;
+        transition: all 250ms ease-in-out;
+      }
+      .second:hover {
+        background: #9ae89f;
+        cursor: pointer;
+      }
+      .context {
+        background: white;
+        margin: 20px auto;
+        max-width: 600px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .first {
+        display: block;
+        margin: 0 auto;
+        font-size: 15px;
+        background: black;
+        color: white;
+        padding: 8px;
+        border-radius: 5px;
+        transition: all 250ms ease-in-out;
+      }
+      .first:hover {
+        cursor: pointer;
+        color: black;
+        background: white;
+      }
+      .intro-picture {
+        border-radius: 10px;
+        width: 100%;
+      }
+      .intro-picture:hover {
+        filter: contrast(80%);
+        transition: all 250ms ease-in-out;
+        transform: scale(1.1);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 15px;
+        margin: 15px 0;
+      }
+      .grid img:hover {
+        transform: scale(1.2);
+        transition: all 200ms ease-in-out;
+      }
+      .dark {
+        background: radial-gradient(
+          circle at 24.1% 68.8%,
+          rgb(50, 50, 50) 0%,
+          rgb(0, 0, 0) 99.4%
+        );
+        color: white;
+      }
+      .dark .context {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .dark a {
+        color: plum;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="first">Dark Theme</button>
+    <div class="context">
+      <h1>Hiking 🏞</h1>
+      <h2>My favourite hobby</h2>
+      <a href="https://en.wikipedia.org/wiki/Hiking" target="_blank">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/700/original/Day-Hike_WEB-1200x800.jpg?1689269653"
+          alt=""
+          class="intro-picture"
+        />
+      </a>
+      <div class="grid">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/698/original/temp_0fd623b5-986d-4c44-9d5c-1473f466a575.jpg?1689269570"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/697/original/web_zuerich_wandern_stoos_1600x900_24944.jpg?1689269518"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/696/original/photo-1551632811-561732d1e306.jpg?1689269508"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/089/831/original/Hiking_to_the_Ice_Lakes._San_Juan_National_Forest__Colorado.jpg?1689351654"
+          alt=""
+        />
+      </div>
+      <p>
+        Hiking is a long, vigorous walk, usually on trails or footpaths in the
+        countryside. Walking for pleasure developed in Europe during the
+        eighteenth century. The equipment required for hiking depends on a
+        variety of factors, including local climate. Day hikers often carry
+        water, food, a map, hat, and rain-proof gear. Hikers have traditionally
+        worn sturdy hiking boots for stability over rough terrain.
+      </p>
+      <button class="second">Find new routes!</button>
+    </div>
+    <footer>
+      Coded with 💛 by
+      <a href="httpsL//www.shecodes.io/" target="_blank">Irene</a>
+    </footer>
+
+    <script>
+      function changeTheme() {
+        let body = document.querySelector("body");
+
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
+      let darkButton = document.querySelector(".first");
+      darkButton.addEventListener("click", changeTheme);
+
+      function contact() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email?");
+        let age = prompt("How old are you?");
+        if (age >= 18) {
+          alert("Hello! " + name + "! We'll email you new routes soon 😃");
+        } else {
+          alert(
+            "Sorry " +
+              name +
+              ". You must be over 18 to safely walk in the mountains."
+          );
+        }
+      }
+      let contactButton = document.querySelector(".second");
+      contactButton.addEventListener("click", contact);
+    </script>
+  </body>
+</html>
